@@ -9,24 +9,33 @@ An input is not a number: Ignore/skip these as well, instead of attempting to ca
 const argNums = argArray.map (elm => Number(elm));
 //console.log(argNums);
 
-const postiveNums = argNums.filter(num => num > 0);
+const positiveNums = argNums.filter(num => num > 0);
 //console.log(postiveNums);
 
-// let delay = 0;
-// postiveNums.forEach(num => {
-//   setTimeout(() => {
-//     process.stdout.write()
-//   }, delay)
-// })
-
-for (let num of postiveNums) {
-  setTimeout(() => {
-    process.stderr.write("\007")
-  }, num * 100)
-}
-
-postiveNums.forEach(element => {
-  setTimeout(() => {
-    process.stdout.write('\n');
-  }, element);
+positiveNums.sort(function(a,b) {
+  return a - b
 });
+console.log(positiveNums);
+
+const positiveNum1 = positiveNums.map(num => num *1000)
+console.log(positiveNum1);
+
+// let maxTime = Math.max(...positiveNum1);
+// console.log(maxTime);
+
+
+
+  for (let num of positiveNum1) {
+    if (i = num) {
+      setTimeout(() => {
+        process.stderr.write("\007")
+      }, num)
+
+      setTimeout(() => {
+        process.stdout.write(`\n`);
+      }, num);
+    }
+  }
+
+
+
